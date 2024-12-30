@@ -1,5 +1,8 @@
 # VXG Inc QA Recruitment Assignment
 
+## Assessment documentation
+https://videoexpertsgroup.atlassian.net/wiki/external/NWI1MWZjZWFmNzlkNGVmZDhkMzUwMWQzZDcyMWEyYTI
+
 ## Tools & Technology used:
 - **Test Framework Suite:** Selenium
 - **Testing Framework:** TestNG
