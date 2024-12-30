@@ -1,9 +1,9 @@
 # VXG Inc QA Recruitment Assignment
 
-## Assessment documentation
+## Assessment documentation:
 https://videoexpertsgroup.atlassian.net/wiki/external/NWI1MWZjZWFmNzlkNGVmZDhkMzUwMWQzZDcyMWEyYTI
 
-## Tools & Technology used:
+## Tools & technology used:
 - **Test Framework Suite:** Selenium
 - **Testing Framework:** TestNG
 - **Programming Language:** Java
@@ -36,13 +36,13 @@ gradle clean test
 5. Selenium will open the browser and start the automation.
 6. To view the report of the automation execution, expand the **build -> reports -> tests** folder and open "index.html" in a browser
 
-## Test Cases & Bugs
+## Testcases & bugs:
 https://docs.google.com/spreadsheets/d/13sYuB5RFgXBmQufGPStEeprhiDBtLgoFTX-YIKUcPbg/edit?usp=sharing
 
 ## Test execution video:
 https://drive.google.com/file/d/13PtuM-CU8hzLYG6RXqwtRq-zJIVcxC7c/view?usp=sharing
 
-## Test results:
+## Test execution result:
 ![image](https://github.com/user-attachments/assets/d57640ee-90dc-455c-95fd-37c373e3164c)
 
 ## Performance testing result:
