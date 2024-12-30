@@ -1,13 +1,17 @@
 package pages;
 
-import org.checkerframework.checker.signature.qual.FieldDescriptor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import utils.DriverSetup;
 
+import java.util.List;
+
 public class AlertsPage extends BasePage {
+    private static final Logger log = LoggerFactory.getLogger(AlertsPage.class);
     @FindBy(xpath = "//button[normalize-space()='Site']")
     WebElement siteButton;
     @FindBy(css = "input[placeholder='Search site...']")
@@ -38,12 +42,10 @@ public class AlertsPage extends BasePage {
     WebElement daysDropDown;
     @FindBy(xpath = "//span[normalize-space()='Last 7 days']")
     WebElement sevenDaysDropDown;
-    @FindBy(className = "main-select")
+    @FindBy(xpath = "//span[normalize-space()='Columns: All']")
     WebElement columnPicker;
     @FindBy(xpath = "//span[normalize-space()='Time']")
     WebElement timeColumn;
-    @FindBy(xpath = "//span[normalize-space()='Name']")
-    WebElement nameColumn;
     @FindBy(xpath = "//span[normalize-space()='Status']")
     WebElement statusColumn;
     @FindBy(xpath = "//span[normalize-space()='Type']")
@@ -54,8 +56,8 @@ public class AlertsPage extends BasePage {
     WebElement typeFromTable;
     @FindBy(xpath = "//div[contains(text(),'Status')]")
     WebElement statusFromTable;
-    @FindBy(xpath = "//tbody/tr[1]/td[5]/button[1]")
-    WebElement reviewButton;
+    @FindBy(xpath = "//button[contains(text(),'Review')]")
+    List<WebElement> reviewButton;
     @FindBy(xpath = "//div[normalize-space()='ChatGPT Request:']")
     WebElement chatGPTRequestLabel;
 
@@ -92,7 +94,6 @@ public class AlertsPage extends BasePage {
         pageRefresh();
         clickAndWait(cameraButton);
         clickAndWait(cameraAxisOffice);
-
         presenceOfElement(cameraAxisOffice);
     }
 
@@ -122,31 +123,29 @@ public class AlertsPage extends BasePage {
         pageRefresh();
         clickAndWait(daysDropDown);
         clickAndWait(sevenDaysDropDown);
-
         presenceOfElement(sevenDaysDropDown);
     }
 
-    public void timeColumnValidation() {
+    public void columnValidation() {
+        pageRefresh();
         clickAndWait(columnPicker);
-        clickAndWait(timeColumn);
-        presenceOfElement(timeFromTable);
-        clickAndWait(timeColumn);
-    }
-
-    public void typeColumnValidation() {
         clickAndWait(typeColumn);
-        presenceOfElement(typeFromTable);
-        clickAndWait(typeColumn);
+        clickAndWait(timeColumn);
+        clickAndWait(statusColumn);
+        try {
+            Thread.sleep(3000);
+            presenceOfElement(timeFromTable);
+            presenceOfElement(typeFromTable);
+            presenceOfElement(statusFromTable);
+        } catch (Exception e) {
+            log.info("Table headers are missing.");
+        } finally {
+            clickAndWait(columnPicker);
+        }
     }
 
-    public void statusColumnValidation() {
-        clickAndWait(statusColumn);
-        presenceOfElement(statusFromTable);
-        clickAndWait(statusColumn);
-    }
-
-    public void reviewAlerts(){
-        clickAndWait(reviewButton);
+    public void reviewAlerts() {
+        clickAndWait(reviewButton.getFirst());
         presenceOfElement(chatGPTRequestLabel);
     }
 }

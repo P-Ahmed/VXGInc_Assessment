@@ -32,9 +32,7 @@ public class AlertsTestRunner extends BaseTestRunner {
 
     @Test(priority = 5)
     public void columnFunctionality() {
-        alertsPage.timeColumnValidation();
-        alertsPage.typeColumnValidation();
-        alertsPage.statusColumnValidation();
+        alertsPage.columnValidation();
     }
 
     @Test(priority = 6)

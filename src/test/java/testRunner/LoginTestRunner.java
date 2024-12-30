@@ -2,7 +2,6 @@ package testRunner;
 
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import utils.DriverSetup;
 
 public class LoginTestRunner extends BaseTestRunner {
     LoginPage loginPage = new LoginPage();

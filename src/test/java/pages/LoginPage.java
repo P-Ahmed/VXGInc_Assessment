@@ -14,8 +14,6 @@ public class LoginPage extends BasePage {
     WebElement signInButton;
     @FindBy(css = "a[href='/customer/alerts']")
     WebElement alertsMenu;
-    @FindBy(xpath = "//button[normalize-space()='Search']")
-    WebElement searchButton;
 
     public LoginPage() {
         PageFactory.initElements(DriverSetup.getDriver(), this);
@@ -28,7 +26,6 @@ public class LoginPage extends BasePage {
     public void doLogin() {
         clickAndType(email, "dev@testing.com");
         clickAndType(password, "123456");
-
         clickAndWait(signInButton);
     }
 
