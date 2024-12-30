@@ -40,7 +40,7 @@ https://docs.google.com/spreadsheets/d/13sYuB5RFgXBmQufGPStEeprhiDBtLgoFTX-YIKUc
 https://drive.google.com/file/d/13PtuM-CU8hzLYG6RXqwtRq-zJIVcxC7c/view?usp=sharing
 
 ## Test results:
-![img.png](img.png)
+![image](https://github.com/user-attachments/assets/d57640ee-90dc-455c-95fd-37c373e3164c)
 
 ## Performance testing result:
-![img_2.png](img_2.png)
+![image](https://github.com/user-attachments/assets/0e3abeb7-1527-44c1-84d7-51d4147f8162)
